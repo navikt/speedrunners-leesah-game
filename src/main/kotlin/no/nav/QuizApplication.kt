@@ -30,7 +30,22 @@ class QuizApplication(private val teamName: String, database: Database? = null):
      */
 
     private fun handleRegisterTeam(question: Question) {
-       this.answer(question.category, UUID.randomUUID().toString(), "speedrunners-leesah-game")
+       this.answer(question.category, question.messageId, "speedrunners-leesah-game")
+    }
+
+    private fun handleAritmetic(question: Question) {
+        val n1 = Integer.parseInt(question.question.subSequence(0,1).toString())
+        val n2 = Integer.parseInt(question.question.subSequence(5,6).toString())
+        val operator = question.question[3]
+        var resultado = 0
+        when (operator) {
+            '+' ->  resultado = n1 + n2
+            '-' ->  resultado = n1 - n2
+            '*' ->  resultado = n1 * n2
+            '/' ->  resultado = n1 / n2
+        }
+        this.answer(question.category, question.messageId, resultado.toString())
+
     }
 
 }
