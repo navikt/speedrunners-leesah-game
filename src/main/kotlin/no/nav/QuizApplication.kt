@@ -36,9 +36,9 @@ class QuizApplication(private val teamName: String, database: Database? = null):
     }
 
     private fun handleAritmetic(question: Question) {
-        val n1 = Integer.parseInt(question.question.subSequence(0,2).toString())
-        val n2 = Integer.parseInt(question.question.subSequence(5,6).toString())
-        val operator = question.question[3]
+        val n1 = Integer.parseInt(question.question.substring(0,2).toString())
+        val n2 = Integer.parseInt(question.question.substring(3).toString())
+        val operator = question.question[2]
         var resultado = 0
         when (operator) {
             '+' ->  resultado = n1 + n2
