@@ -20,6 +20,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
         if (question.category == "team-registration") handleRegisterTeam(question)
         if (question.category == "make-ingress") this.answer(question.category, question.messageId, "https://speedrunners-leesah-game.dev.intern.nav.no")
         if (question.category == "arithmetic") handleAritmetic(question)
+        if (question.category == "NAV") handleNAV(question)
     }
 
 
@@ -48,6 +49,10 @@ class QuizApplication(private val teamName: String, database: Database? = null):
             '/' ->  resultado = n1 / n2
         }
         this.answer(question.category, question.messageId, resultado.toString())
+    }
 
+    private fun handleNAV(question: Question){
+        if (question.question == "På hvilken nettside finner man informasjon om rekruttering til NAV IT?") answer(question.category, question.messageId, "https://www.detsombetyrnoe.no")
+        if (question.question == "Hva heter applikasjonsplattformen til NAV?") answer(question.category, question.messageId, "NAIS")
     }
 }
