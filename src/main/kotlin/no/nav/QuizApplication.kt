@@ -31,6 +31,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
 
     private fun handleRegisterTeam(question: Question) {
        this.answer(question.category, question.messageId, "speedrunners-leesah-game")
+
     }
 
     private fun handleAritmetic(question: Question) {
@@ -45,7 +46,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
             '/' ->  resultado = n1 / n2
         }
         this.answer(question.category, question.messageId, resultado.toString())
-
+        
     }
 
 }
