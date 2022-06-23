@@ -1,0 +1,31 @@
+apiVersion: nais.io/v1alpha
+kind: Application
+metadata:
+  name: speedrunnes-leesah-game
+  namespace: leesah-quiz
+  lables:
+    team: leesah-quiz
+  strategy:
+    type: Recreate
+spec:
+  image: {{image}}
+  port: 8080
+  strategy:
+    type: Recreate
+  liveness:
+    initialDelay: 30
+    path: isLive
+  readiness:
+    initalDelay: 30
+    path: isReady
+  replicas:
+    min: 1
+    max: 1
+  kafka:
+    pool: nav-dev
+  prometheus:
+    enabled: true
+    path: /metrics
+  env:
+    - name: QUIZ_TOPIC
+      value: "leesah-quiz.leesah-rapid-v2"
