@@ -14,10 +14,10 @@ spec:
     type: Recreate
   liveness:
     initialDelay: 30
-    path: /isLive
+    path: /isalive
   readiness:
     initialDelay: 30
-    path: /isReady
+    path: /isready
   replicas:
     min: 1
     max: 1
