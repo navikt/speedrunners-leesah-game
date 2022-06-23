@@ -4,6 +4,7 @@ import no.nav.db.Database
 import no.nav.quizrapid.*
 import no.nav.rapid.Assessment
 import no.nav.rapid.Question
+import java.util.*
 
 
 /**
@@ -28,7 +29,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
      */
 
     private fun handleRegisterTeam(question: Question) {
-        TODO("Her må du skrive kode ;)")
+       this.answer(question.category, UUID.randomUUID().toString(), "speedrunners")
     }
 
 }
