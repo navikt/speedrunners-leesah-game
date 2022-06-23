@@ -3,6 +3,7 @@ package no.nav
 import no.nav.db.Database
 import no.nav.quizrapid.*
 import no.nav.rapid.Assessment
+import no.nav.rapid.Config
 import no.nav.rapid.Question
 import java.util.*
 
@@ -29,7 +30,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
      */
 
     private fun handleRegisterTeam(question: Question) {
-       this.answer(question.category, UUID.randomUUID().toString(), "speedrunners")
+       this.answer(question.category, UUID.randomUUID().toString(), "speedrunners-leesah-game")
     }
 
 }

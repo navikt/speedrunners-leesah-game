@@ -10,7 +10,7 @@ internal class QuizApplicationTest {
 
     @Test
     fun `håndterer team-registration`() {
-        val teamNavn = "speedrunners"
+        val teamNavn = "speedrunners-leesah-game"
         val qa = QuizApplication(teamNavn)
         qa.handle(Question(category = "team-registration", question =  "register new team..."))
         val messages = qa.messages()
