@@ -30,7 +30,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
      */
 
     private fun handleRegisterTeam(question: Question) {
-       this.answer(question.category, UUID.randomUUID().toString(), "speedrunners-leesah-game")
+       this.answer(question.category, question.messageId, "speedrunners-leesah-game")
     }
 
 }
