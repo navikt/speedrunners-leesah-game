@@ -18,6 +18,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
     override fun handle(question: Question) {
         logger.log(question)
         if (question.category == "team-registration") handleRegisterTeam(question)
+        if (question.category == "make-ingress") this.answer(question.category, question.messageId, "https://speedrunners-leesah-game.dev.intern.nav.no")
         if (question.category == "arithmetic") handleAritmetic(question)
     }
 
