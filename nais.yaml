@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: speedrunnes-leesah-game
   namespace: leesah-quiz
-  lables:
+  labels:
     team: leesah-quiz
   strategy:
     type: Recreate
@@ -16,7 +16,7 @@ spec:
     initialDelay: 30
     path: isLive
   readiness:
-    initalDelay: 30
+    initialDelay: 30
     path: isReady
   replicas:
     min: 1
