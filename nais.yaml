@@ -27,3 +27,5 @@ spec:
   env:
     - name: QUIZ_TOPIC
       value: "leesah-quiz.leesah-rapid-v2"
+  ingresses:
+    - https://speedrunners-leesah-game.dev.intern.nav.no
